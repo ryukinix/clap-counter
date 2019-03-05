@@ -19,5 +19,11 @@ executables:
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
+    - -Wall -O2 -static -threaded
+    cc-options: -static
+    ld-options: -static -pthread
+    extra-lib-dirs:
+      - /usr/lib/musl/ # libc static
+      - lib/ # gmp static
     dependencies:
     - clap-counter
