@@ -4,10 +4,12 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 143542b0a95afeb3108e05da7feb8965b60929757ecff4c637c2e4f6648ae254
+-- hash: 4510b070273a963c03ddca2d21116c950813e4275b182f8ad5894d9bc11e4b7a
 
 name:           clap-counter
 version:        0.0.0
+license:        MIT
+license-file:   LICENSE
 build-type:     Simple
 
 library
