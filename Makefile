@@ -7,7 +7,7 @@ REMOTE =  lerax@server.lerax.me:clap-counter/
 build:
 	stack build
 
-server:
+serve:
 	stack build --exec $(PROJECT)
 
 deps:
