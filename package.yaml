@@ -25,11 +25,6 @@ dependencies:
 - wai-extra
 - warp
 
-# The library contains all of our application code. The executable
-# defined below is just a thin wrapper.
-library:
-  source-dirs: app
-
 # Runnable executable for our application
 executables:
   clap-counter:
@@ -45,5 +40,3 @@ executables:
     extra-lib-dirs:
       - /usr/lib/musl/ # libc static
       - lib/ # gmp static
-    dependencies:
-    - clap-counter
