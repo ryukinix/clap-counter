@@ -6,7 +6,7 @@ GMP_REMOTE = server.lerax.me/archive/libgmp.a
 build:
 	stack build
 
-server:
+serve:
 	stack build --exec $(PROJECT)
 
 deps:
