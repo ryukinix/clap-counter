@@ -1,9 +1,29 @@
 name:    clap-counter
-version: "0.0.0"
+version: "0.0.1"
 
 dependencies:
 - base
-- yesod-core
+- scotty
+- aeson
+- blaze-builder
+- bytestring
+- case-insensitive
+- data-default-class
+- exceptions
+- fail
+- http-types
+- monad-control
+- mtl
+- nats
+- network
+- regex-compat
+- text
+- transformers
+- transformers-base
+- transformers-compat
+- wai
+- wai-extra
+- warp
 
 # The library contains all of our application code. The executable
 # defined below is just a thin wrapper.
@@ -14,7 +34,7 @@ library:
 executables:
   clap-counter:
     main: Main.hs
-    source-dirs: app
+    source-dirs: src
     ghc-options:
     - -threaded
     - -rtsopts
