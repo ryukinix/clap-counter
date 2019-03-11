@@ -3,7 +3,8 @@ BIN = bin/
 BIN_ABS = $(shell pwd)/$(BIN)
 GMP = lib/libgmp.a
 GMP_REMOTE = server.lerax.me/archive/libgmp.a
-REMOTE =  lerax@server.lerax.me:clap-counter/
+SSH = lerax@server.lerax.me
+REMOTE =  $(SSH):clap-counter/
 
 build:
 	stack build
@@ -20,7 +21,8 @@ dist: deps
 	stack --local-bin-path $(BIN) install
 
 deploy: dist
-	rsync -ra -e ssh bin/clap-counter $(REMOTE)
+	rsync -P -ra -e ssh bin/clap-counter $(REMOTE)
+	ssh $(SSH) -t sudo systemctl restart clap-counter
 
 docker-build:
 	docker build -t $(PROJECT) .
