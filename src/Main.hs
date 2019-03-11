@@ -12,6 +12,10 @@ import Web.Scotty.Trans
 import Counter
 
 import Data.Default.Class
+
+-- HACK: this should be defined in Counter.hs now the compiler warns
+-- as orphan instance.  However if I put this at Counter.hs the `def`
+-- variable will not be visible to this scope.
 instance Default Counter where
     def = MkCounter 0
 
