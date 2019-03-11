@@ -15,7 +15,7 @@ request adds 1 on the number of claps of `<url>`.
 
 # Installing and executing
 
-To build the software the (stack)[https://docs.haskellstack.org/en/stable/README/]
+To build the software the [stack](https://docs.haskellstack.org/en/stable/README/)
 is used. The tool will automatically download every dependency of the project
 using cabal and the haskell repository.
 
