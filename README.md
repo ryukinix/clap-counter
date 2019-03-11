@@ -1,44 +1,28 @@
-> *Note: This project was generated from the `yesod-minimal`
-   scaffolding, and does not support features like `yesod devel`. If
-   you want these features, use the `yesod-simple` stack template.*
+# clap-counter
 
-## Haskell Setup
+This software is a service which count likes in a website. It is  as a
+_like counter_ so to speak.
 
-1. If you haven't already, [install Stack](https://haskell-lang.org/get-started)
-	* On POSIX systems, this is usually `curl -sSL https://get.haskellstack.org/ | sh`
-2. Install GHC: `stack setup`
-3. Build libraries: `stack build`
+It serves everything in a REST API which has two rules:
 
-## Development
-
-Start a development server with:
-
-```
-stack build --exec clap-counter
+``` html
+GET /v1/claps/<url>
+POST /v1/claps/<url>
 ```
 
-## Documentation
+The GET request returns the number of claps of `<url>` sent and the POST
+request adds 1 on the number of claps of `<url>`.
 
-* Read the [Yesod Book](https://www.yesodweb.com/book) online for free
-* Check [Stackage](http://stackage.org/) for documentation on the
-  packages in your LTS Haskell version, or [search it using
-  Hoogle](https://www.stackage.org/lts/hoogle?q=). Tip: Your LTS
-  version is in your `stack.yaml` file.
-* For local documentation, use:
-	* `stack haddock --open` to generate Haddock documentation for
-      your dependencies, and open that documentation in a browser
-	* `stack hoogle <function, module or type signature>` to generate
-      a Hoogle database and search for your query
-* The [Yesod cookbook](https://github.com/yesodweb/yesod-cookbook) has
-  sample code for various needs
+# Installing and executing
 
-## Getting Help
+To build the software the (stack)[https://docs.haskellstack.org/en/stable/README/]
+is used. The tool will automatically download every dependency of the project
+using cabal and the haskell repository.
 
-* Ask questions on [Stack Overflow, using the Yesod or Haskell
-  tags](https://stackoverflow.com/questions/tagged/yesod+haskell)
-* Ask the [Yesod Google Group](https://groups.google.com/forum/#!forum/yesodweb)
-* There are several chatrooms you can ask for help:
-	* For IRC, try Freenode#yesod and Freenode#haskell
-	* [Functional Programming
-      Slack](https://fpchat-invite.herokuapp.com/), in the #haskell,
-      #haskell-beginners, or #yesod channels.
+After installing the _stack_ you may use the Makefile to build and execute the
+project. Use the **build** rule to build and the **serve** rule to serve the
+server which will count likes depending on the request made to the website.
+
+# Docker
+
+The dockerfile will be implemented soon and will be available on the docker hub.
