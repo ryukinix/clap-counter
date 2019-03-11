@@ -2,8 +2,10 @@ module Counter where
 
 import Control.Monad.State
 
+
+
 newtype Counter = MkCounter {cValue :: Integer}
-  deriving (Show)
+
 
 type CounterState = State Counter
 
@@ -39,7 +41,3 @@ mutation :: Integer -> CounterState ()
 mutation n
   | n <= 0 = zeroState
   | otherwise  = incS 1 >> (mutation (n - 1))
-
-
-main :: IO ()
-main = print $ getS $ mutation 30
