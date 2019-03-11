@@ -25,4 +25,4 @@ server which will count likes depending on the request made to the website.
 
 # Docker
 
-The docker will be implemented soon.
+The dockerfile will be implemented soon and will be available on the docker hub.
