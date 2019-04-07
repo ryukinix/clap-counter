@@ -49,10 +49,10 @@ modify f = ask >>= liftIO . atomically . flip modifyTVar' f
 counterAPI :: ScottyT Text WebM ()
 counterAPI = do
   middleware logStdoutDev
-  get "/" $ do
+  get "/v1/claps/" $ do
     c <- webM $ gets cValue
     text $ fromString $ (show c ++ "\n")
-  post "/" $ do
+  post "/v1/claps/" $ do
     webM $ modify $ \ st -> st { cValue = cValue st + 1 }
     c <- webM $ gets cValue
     text $ fromString $ (show c ++ "\n")
